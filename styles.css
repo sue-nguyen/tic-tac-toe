@@ -42,7 +42,7 @@ body {
 }
   
   
-.cell.x::before, .cell.x::after {
+.cell.ex::before, .cell.ex::after {
     position: absolute;
     content: '';
     width: calc(var(--mark-size) * 0.15);
@@ -50,10 +50,10 @@ body {
     background-color: navy;
 }
   
-.cell.x::before {
+.cell.ex::before {
     transform: rotate(45deg);
 }
   
-.cell::after {
+.cell.ex::after {
     transform: rotate(-45deg);
 }
