@@ -1,10 +1,21 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+  
 :root {
     --cell-size: 100px;
-    --mark-size: calc(var(--cell-size) * 0.9);
-  }
+    --mark-size: calc(var(--cell-size) * 0.95);
+}
   
 body {
-    background: linear-gradient(217deg, rgba(255,100,0,.8), rgba(255,0,0,0) 70.71%), linear-gradient(127deg, rgba(0,255,0,.8), rgba(100,255,0,0) 70.71%), linear-gradient(336deg, rgba(50,0,255,.8), rgba(0,0,255,0) 70.71%);
+    background: silver;
+}
+  
+.header {
+    font-family: 'Solway';
+    font-size: 75px;
+    font-weight: bold;
+    text-align: center;
 }
   
 .board {
@@ -45,9 +56,10 @@ body {
 .cell.ex::before, .cell.ex::after {
     position: absolute;
     content: '';
-    width: calc(var(--mark-size) * 0.15);
+    width: calc(var(--mark-size) * 0.165);
     height: var(--mark-size);
-    background-color: navy;
+    background-color: black;
+    border-radius: 25px;
 }
   
 .cell.ex::before {
@@ -56,4 +68,26 @@ body {
   
 .cell.ex::after {
     transform: rotate(-45deg);
+}
+  
+.cell.oh::before, .cell.oh::after {
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+}
+
+.cell.oh::before {
+    width: calc(var(--mark-size) * 0.775);
+    height: calc(var(--mark-size) * 0.775);
+    background: black;
+}
+  
+.cell.oh::after {
+    width: calc(var(--mark-size) * 0.475);
+    height: calc(var(--mark-size) * 0.475);
+    background: silver;
+}
+  
+.cell.ex, .cell.oh {
+    cursor: not-allowed;
 }
