@@ -1,0 +1,59 @@
+:root {
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size) * 0.9);
+  }
+  
+body {
+    background: linear-gradient(217deg, rgba(255,100,0,.8), rgba(255,0,0,0) 70.71%), linear-gradient(127deg, rgba(0,255,0,.8), rgba(100,255,0,0) 70.71%), linear-gradient(336deg, rgba(50,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
+  
+.board {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, auto);
+}
+  
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 3px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.cell:first-child, .cell:nth-child(2), .cell:nth-child(3) {
+    border-top: none;
+}
+  
+.cell:nth-child(3n+1) {
+    border-left: none;
+}
+  
+.cell:nth-child(3n+3) {
+    border-right: none;
+}
+  
+.cell:last-child, .cell:nth-child(7), .cell:nth-child(8) {
+    border-bottom: none;
+}
+  
+  
+.cell.x::before, .cell.x::after {
+    position: absolute;
+    content: '';
+    width: calc(var(--mark-size) * 0.15);
+    height: var(--mark-size);
+    background-color: navy;
+}
+  
+.cell.x::before {
+    transform: rotate(45deg);
+}
+  
+.cell::after {
+    transform: rotate(-45deg);
+}
