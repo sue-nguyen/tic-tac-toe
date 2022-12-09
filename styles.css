@@ -179,14 +179,14 @@ p {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(200, 200, 200, 0.9);
+  background-color: rgba(41, 41, 41, 0.9);
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: black;
+  color: white;
+  text-shadow: 0 0 25px rgb(255, 110, 110);
   font-size: 5rem;
   font-family: 'Cabin';
-  font-weight: bold;
 }
 
 .end button {
