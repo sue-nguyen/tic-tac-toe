@@ -10,12 +10,11 @@
 }
 
 body {
-  background: silver;
+  background: #000022;
 }
 
 .header {
   font-family: 'Cabin';
-  font-weight: bold;
   text-align: center;
 }
 
@@ -27,34 +26,97 @@ body {
   margin: auto;
 }
 
+/* NEON DISPLAY ********************/
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 160),
+      0 0 30px rgb(255, 246, 169), 0 0 40px rgb(255, 238, 82),
+      0 0 50px rgb(255, 240, 0), 0 0 80px rgb(222, 255, 0);
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+.header h1,
+p {
+  color: #fff43d;
+  animation: flicker 1.5s infinite alternate;
+}
+
+.header h1 {
+  font-size: 3rem;
+}
+
+.header p {
+  margin-bottom: 2.5rem;
+}
+
+/***********************************/
+
+/* CREATING CELLS*******************/
+
 .cell {
   width: 100px;
   height: 100px;
-  border: 3px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 3px solid white;
 }
 
-.cell:first-child,
-.cell:nth-child(2),
-.cell:nth-child(3) {
+.cell:first-child {
   border-top: none;
-}
-
-.cell:nth-child(3n + 1) {
   border-left: none;
 }
 
-.cell:nth-child(3n + 3) {
+.cell:nth-child(2) {
+  border-top: none;
+}
+
+.cell:nth-child(3) {
+  border-top: none;
   border-right: none;
 }
 
-.cell:last-child,
-.cell:nth-child(7),
+.cell:nth-child(4) {
+  border-left: none;
+}
+
+.cell:nth-child(5) {
+  box-shadow: 0 0 25px #fe77fe;
+}
+
+.cell:nth-child(6) {
+  border-right: none;
+}
+
+.cell:nth-child(7) {
+  border-bottom: none;
+  border-left: none;
+}
+
 .cell:nth-child(8) {
   border-bottom: none;
 }
+
+.cell:last-child {
+  border-right: none;
+  border-bottom: none;
+}
+
+/***********************************/
+
+/* CREATING X SHAPES****************/
 
 .cell.ex::before,
 .cell.ex::after,
@@ -88,6 +150,10 @@ body {
   transform: rotate(-45deg);
 }
 
+/***********************************/
+
+/* CREATING HEART SHAPE*************/
+
 .cell.oh::before,
 .cell.oh::after,
 .board.oh .cell:not(.ex):not(.oh):hover::before,
@@ -114,10 +180,9 @@ body {
   background: silver;
 }
 
-.cell.ex,
-.cell.oh {
-  cursor: not-allowed;
-}
+/***********************************/
+
+/* END OF GAME DISPLAY**************/
 
 .end {
   display: none;
