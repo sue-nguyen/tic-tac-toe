@@ -102,7 +102,6 @@ li a:hover,
   content: '';
   width: calc(var(--mark-size) * 0.165);
   height: var(--mark-size);
-  border-radius: 25px;
 }
 
 .cell.ex::before,
@@ -141,8 +140,8 @@ li a:hover,
 
 .cell.oh::before,
 .board.oh .cell:not(.ex):not(.oh):hover::before {
-  width: calc(var(--mark-size) * 0.775);
-  height: calc(var(--mark-size) * 0.775);
+  width: calc(var(--mark-size) * 0.85);
+  height: calc(var(--mark-size) * 0.85);
 }
 
 .cell.oh::before {
@@ -151,8 +150,8 @@ li a:hover,
 
 .cell.oh::after,
 .board.oh .cell:not(.ex):not(.oh):hover::after {
-  width: calc(var(--mark-size) * 0.475);
-  height: calc(var(--mark-size) * 0.475);
+  width: calc(var(--mark-size) * 0.55);
+  height: calc(var(--mark-size) * 0.55);
   background: white;
 }
 
