@@ -1,93 +1,163 @@
-*, *::after, *::before {
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
-  
+
 :root {
-    --cell-size: 100px;
-    --mark-size: calc(var(--cell-size) * 0.95);
+  --cell-size: 100px;
+  --mark-size: calc(var(--cell-size) * 0.95);
 }
-  
+
 body {
-    background: silver;
+  background: silver;
 }
-  
+
 .header {
-    font-family: 'Solway';
-    font-size: 75px;
-    font-weight: bold;
-    text-align: center;
+  font-family: 'Cabin';
+  font-weight: bold;
+  text-align: center;
 }
-  
+
 .board {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    grid-template-columns: repeat(3, auto);
+  width: 300px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  margin: auto;
 }
-  
+
 .cell {
-    width: 100px;
-    height: 100px;
-    border: 3px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100px;
+  height: 100px;
+  border: 3px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-  
-.cell:first-child, .cell:nth-child(2), .cell:nth-child(3) {
-    border-top: none;
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
 }
-  
-.cell:nth-child(3n+1) {
-    border-left: none;
+
+.cell:nth-child(3n + 1) {
+  border-left: none;
 }
-  
-.cell:nth-child(3n+3) {
-    border-right: none;
+
+.cell:nth-child(3n + 3) {
+  border-right: none;
 }
-  
-.cell:last-child, .cell:nth-child(7), .cell:nth-child(8) {
-    border-bottom: none;
+
+.cell:last-child,
+.cell:nth-child(7),
+.cell:nth-child(8) {
+  border-bottom: none;
 }
-  
-  
-.cell.ex::before, .cell.ex::after {
-    position: absolute;
-    content: '';
-    width: calc(var(--mark-size) * 0.165);
-    height: var(--mark-size);
-    background-color: black;
-    border-radius: 25px;
+
+.cell.ex::before,
+.cell.ex::after,
+.board.ex .cell:not(.ex):not(.oh):hover::before,
+.board.ex .cell:not(.ex):not(.oh):hover::after {
+  position: absolute;
+  content: '';
+  width: calc(var(--mark-size) * 0.165);
+  height: var(--mark-size);
+  border-radius: 25px;
 }
-  
-.cell.ex::before {
-    transform: rotate(45deg);
-}
-  
+
+.cell.ex::before,
 .cell.ex::after {
-    transform: rotate(-45deg);
+  background: black;
 }
-  
-.cell.oh::before, .cell.oh::after {
-    position: absolute;
-    content: '';
-    border-radius: 50%;
+
+.board.ex .cell:not(.ex):not(.oh):hover::before,
+.board.ex .cell:not(.ex):not(.oh):hover::after,
+.board.oh .cell:not(.ex):not(.oh):hover::before {
+  background: darkgrey;
+}
+
+.cell.ex::before,
+.board.ex .cell:not(.ex):not(.oh):hover::before {
+  transform: rotate(45deg);
+}
+
+.cell.ex::after,
+.board.ex .cell:not(.ex):not(.oh):hover::after {
+  transform: rotate(-45deg);
+}
+
+.cell.oh::before,
+.cell.oh::after,
+.board.oh .cell:not(.ex):not(.oh):hover::before,
+.board.oh .cell:not(.ex):not(.oh):hover::after {
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+}
+
+.cell.oh::before,
+.board.oh .cell:not(.ex):not(.oh):hover::before {
+  width: calc(var(--mark-size) * 0.775);
+  height: calc(var(--mark-size) * 0.775);
 }
 
 .cell.oh::before {
-    width: calc(var(--mark-size) * 0.775);
-    height: calc(var(--mark-size) * 0.775);
-    background: black;
+  background: black;
 }
-  
-.cell.oh::after {
-    width: calc(var(--mark-size) * 0.475);
-    height: calc(var(--mark-size) * 0.475);
-    background: silver;
+
+.cell.oh::after,
+.board.oh .cell:not(.ex):not(.oh):hover::after {
+  width: calc(var(--mark-size) * 0.475);
+  height: calc(var(--mark-size) * 0.475);
+  background: silver;
 }
-  
-.cell.ex, .cell.oh {
-    cursor: not-allowed;
+
+.cell.ex,
+.cell.oh {
+  cursor: not-allowed;
+}
+
+.end {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(200, 200, 200, 0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text {
+  color: black;
+  font-size: 5rem;
+  font-family: 'Cabin';
+  font-weight: bold;
+}
+
+.end button {
+  font-size: 3rem;
+  background-color: rgb(110, 110, 110);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.end button:hover {
+  background-color: rgb(150, 150, 150);
+  box-shadow: 2px 2px 5px grey;
+}
+
+.end button:active {
+  background-color: white;
+  color: black;
+  box-shadow: 2px 2px 5px grey;
+}
+
+.end.show {
+  display: flex;
 }
