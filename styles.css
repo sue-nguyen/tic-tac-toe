@@ -5,7 +5,7 @@
 }
 
 :root {
-  --cell-size: 100px;
+  --cell-size: 150px;
   --mark-size: calc(var(--cell-size) * 0.95);
 }
 
@@ -19,8 +19,8 @@ body {
 }
 
 .board {
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
   display: grid;
   grid-template-columns: repeat(3, auto);
   margin: auto;
@@ -35,7 +35,15 @@ body {
 }
 
 p {
+  font-family: 'Cabin';
+  font-size: 20px;
+  text-align: center;
   color: white;
+}
+
+p code {
+  color: rgb(255, 104, 104);
+  font-weight: bold;
 }
 
 /* NEON DISPLAY ********************/
@@ -78,8 +86,8 @@ p {
 /* CREATING CELLS*******************/
 
 .cell {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
