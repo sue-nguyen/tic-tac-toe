@@ -9,12 +9,21 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Cabin"
     />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.2.1/css/all.css"
+    />
+    <link
+      rel="icon"
+      type="image/icon type"
+      href="https://i.pinimg.com/474x/93/30/e2/9330e2ba8812f086c0b017214b3ead96.jpg"
+    />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div class="header">
       <h1>TIC TAC TOE</h1>
-      <p>Player X starts the game.</p>
+      <p><i class="fa-solid fa-circle-info"></i> Player X starts the game.</p>
     </div>
     <div class="board" id="board">
       <div class="cell" data-cell></div>
@@ -28,8 +37,8 @@
       <div class="cell" data-cell></div>
     </div>
     <div class="end" id="end">
-      <div class="text">X WINS!</div>
-      <button>START</button>
+      <div end-text></div>
+      <button id="restart"><i class="fa-solid fa-rotate-right"></i> RESTART</button>
     </div>
   </body>
 </html>
