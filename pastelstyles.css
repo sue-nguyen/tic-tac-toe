@@ -17,6 +17,10 @@ body {
   text-align: center;
 }
 
+.header h1 {
+  color: #836083;
+}
+
 .board {
   width: 450px;
   height: 450px;
@@ -28,7 +32,7 @@ body {
 /* MODE HEADER**********************/
 
 header {
-  background-color: darkgrey;
+  background-color: #ffd5ca;
 }
 
 ul {
@@ -44,17 +48,33 @@ li {
 
 li a {
   text-decoration: none;
-  color: white;
   padding: 10px;
+  font-weight: bold;
 }
 
 li a:hover,
 .active {
-  background-color: silver;
+  background-color: #ffcaa6;
 }
 
-.active {
-  color: black;
+#classic {
+  color: #2abbb4;
+}
+
+#heart {
+  color: #789561;
+}
+
+#geometry {
+  color: #923592;
+}
+
+#pastel {
+  color: #ff7920;
+}
+
+#neon {
+  color: #274c77;
 }
 
 /***********************************/
@@ -67,7 +87,7 @@ li a:hover,
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid black;
+  border: 3px solid rgb(39, 61, 110);
 }
 
 .cell:first-child,
