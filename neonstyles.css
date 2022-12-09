@@ -11,10 +11,10 @@
 
 body {
   background: #000022;
+  font-family: 'Cabin';
 }
 
 .header {
-  font-family: 'Cabin';
   text-align: center;
 }
 
@@ -25,6 +25,42 @@ body {
   grid-template-columns: repeat(3, auto);
   margin: auto;
 }
+
+/* MODE HEADER**********************/
+
+header {
+  background-color: rgb(71, 0, 0);
+}
+
+ul {
+  list-style: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 10px;
+}
+
+li {
+  display: inline;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+  text-shadow: 0 0 10px rgb(255, 57, 57);
+  padding: 10px;
+}
+
+li a:hover,
+.active {
+  background-color: rgb(99, 0, 0);
+}
+
+.active {
+  color: rgb(146, 146, 146);
+  text-shadow: 0 0 20px 20px white;
+}
+
+/***********************************/
 
 /* NEON DISPLAY ********************/
 
@@ -119,7 +155,7 @@ body {
 
 .board.ex .cell:not(.ex):not(.oh):hover::before,
 .board.ex .cell:not(.ex):not(.oh):hover::after {
-  background: rgb(0, 0, 0);
+  background: black;
   box-shadow: 0 0 10px rgb(0, 204, 255);
 }
 
@@ -156,8 +192,11 @@ body {
 
 .board.oh .cell:not(.ex):not(.oh):hover::before,
 .board.oh .cell:not(.ex):not(.oh):hover::after {
-  background: rgb(0, 0, 0);
   box-shadow: 0 0 10px rgb(255, 0, 212);
+}
+
+.board.oh .cell:not(.ex):not(.oh):hover::before {
+  background: black;
 }
 
 /***********************************/
@@ -178,25 +217,24 @@ body {
   color: white;
   text-shadow: 0 0 25px rgb(255, 110, 110);
   font-size: 5rem;
-  font-family: 'Cabin';
 }
 
 .end button {
   font-size: 25px;
-  background-color: rgb(110, 110, 110);
+  background-color: rgb(71, 0, 0);
   color: white;
   border: none;
   cursor: pointer;
 }
 
 .end button:hover {
-  background-color: rgb(150, 150, 150);
+  text-shadow: 0 0 10px #fff, 0 0 20px red, 0 0 30px maroon;
   box-shadow: 2px 2px 5px grey;
 }
 
 .end button:active {
   background-color: white;
-  color: black;
+  color: rgb(71, 0, 0);
   box-shadow: 2px 2px 5px grey;
 }
 
