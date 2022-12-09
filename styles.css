@@ -4,17 +4,16 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Cabin';
+}
+
 :root {
   --cell-size: 150px;
   --mark-size: calc(var(--cell-size) * 0.95);
 }
 
-body {
-  background: #000022;
-}
-
 .header {
-  font-family: 'Cabin';
   text-align: center;
 }
 
@@ -26,39 +25,22 @@ body {
   margin: auto;
 }
 
-/* NEON DISPLAY ********************/
+/* MODE HEADER**********************/
 
-@keyframes flicker {
-  0%,
-  18%,
-  22%,
-  25%,
-  53%,
-  57%,
-  100% {
-    text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 160),
-      0 0 30px rgb(255, 246, 169), 0 0 40px rgb(255, 238, 82),
-      0 0 50px rgb(255, 240, 0);
-  }
-  20%,
-  24%,
-  55% {
-    text-shadow: none;
-  }
+header {
+  background-color: silver;
 }
 
-.header h1,
-.header p {
-  color: #fff43d;
-  animation: flicker 1.5s infinite alternate;
+ul {
+  list-style: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-.header h1 {
-  font-size: 3rem;
-}
-
-.header p {
-  margin-bottom: 2.5rem;
+li {
+  display: inline;
+  background-color: silver;
 }
 
 /***********************************/
@@ -71,7 +53,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid white;
+  border: 3px solid black;
 }
 
 .cell:first-child,
@@ -111,8 +93,7 @@ body {
 
 .cell.ex::before,
 .cell.ex::after {
-  background: rgb(197, 197, 197);
-  box-shadow: 0 0 20px rgb(0, 204, 255);
+  background: black;
 }
 
 .cell.ex::before,
@@ -126,9 +107,9 @@ body {
 }
 
 .board.ex .cell:not(.ex):not(.oh):hover::before,
-.board.ex .cell:not(.ex):not(.oh):hover::after {
-  background: rgb(0, 0, 0);
-  box-shadow: 0 0 10px rgb(0, 204, 255);
+.board.ex .cell:not(.ex):not(.oh):hover::after,
+.board.oh .cell:not(.ex):not(.oh):hover::before {
+  background: silver;
 }
 
 /***********************************/
@@ -151,21 +132,14 @@ body {
 }
 
 .cell.oh::before {
-  background: rgb(197, 197, 197);
-  box-shadow: 0 0 20px rgb(255, 0, 212);
+  background: black;
 }
 
 .cell.oh::after,
 .board.oh .cell:not(.ex):not(.oh):hover::after {
   width: calc(var(--mark-size) * 0.475);
   height: calc(var(--mark-size) * 0.475);
-  background: #000022;
-}
-
-.board.oh .cell:not(.ex):not(.oh):hover::before,
-.board.oh .cell:not(.ex):not(.oh):hover::after {
-  background: rgb(0, 0, 0);
-  box-shadow: 0 0 10px rgb(255, 0, 212);
+  background: white;
 }
 
 /***********************************/
@@ -179,14 +153,12 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(41, 41, 41, 0.9);
+  background-color: rgba(20, 20, 20, 0.9);
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: white;
-  text-shadow: 0 0 25px rgb(255, 110, 110);
   font-size: 5rem;
-  font-family: 'Cabin';
 }
 
 .end button {
