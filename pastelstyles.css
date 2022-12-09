@@ -233,25 +233,24 @@ li a:hover,
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 140, 255, 0.5);
+  background-color: rgba(52, 255, 245, 0.5);
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: #03113d;
+  color: rgb(0, 18, 53);
   font-size: 5rem;
 }
 
 .end button {
   font-size: 25px;
-  background-color: #9c9200;
-  color: #ffee00;
+  background-color: #7298ff;
+  color: #01103a;
   border: none;
   cursor: pointer;
 }
 
 .end button:hover {
-  background-color: rgb(150, 150, 150);
-  box-shadow: 2px 2px 5px grey;
+  background-color: #aec4ff;
 }
 
 .end button:active {
