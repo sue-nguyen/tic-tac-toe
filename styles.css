@@ -26,6 +26,19 @@ body {
   margin: auto;
 }
 
+.iframe {
+  display: flex;
+  margin: 3rem auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+p {
+  color: white;
+  text-align: center;
+}
+
 /* NEON DISPLAY ********************/
 
 @keyframes flicker {
@@ -38,7 +51,7 @@ body {
   100% {
     text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 160),
       0 0 30px rgb(255, 246, 169), 0 0 40px rgb(255, 238, 82),
-      0 0 50px rgb(255, 240, 0), 0 0 80px rgb(222, 255, 0);
+      0 0 50px rgb(255, 240, 0);
   }
   20%,
   24%,
@@ -48,7 +61,7 @@ body {
 }
 
 .header h1,
-p {
+.header p {
   color: #fff43d;
   animation: flicker 1.5s infinite alternate;
 }
