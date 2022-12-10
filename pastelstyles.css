@@ -233,29 +233,29 @@ li a:hover,
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(52, 255, 245, 0.5);
+  background-color: rgba(43, 43, 43, 0.9);
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: rgb(0, 18, 53);
+  color: rgb(231, 157, 200);
   font-size: 5rem;
 }
 
 .end button {
   font-size: 25px;
-  background-color: #7298ff;
-  color: #01103a;
+  background-color: #10270c;
+  color: #00db80;
   border: none;
   cursor: pointer;
 }
 
 .end button:hover {
-  background-color: #aec4ff;
+  background-color: #004e1e;
 }
 
 .end button:active {
   background-color: white;
-  color: black;
+  color: rgba(48, 92, 28, 0.836);
   box-shadow: 2px 2px 5px grey;
 }
 
