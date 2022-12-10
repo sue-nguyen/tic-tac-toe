@@ -17,12 +17,9 @@ body {
   text-align: center;
 }
 
-.header h1 {
-  color: #144904;
-}
-
+.header h1,
 .header p {
-  color: #961453;
+  color: #144904;
 }
 
 .board {
@@ -135,11 +132,11 @@ li a:hover,
 /* CREATING X SHAPES****************/
 
 .cell.ex {
-  background-color: #ffbbfc;
+  background-color: #e5a2e2;
 }
 
 .board.ex .cell:not(.ex):not(.oh):hover {
-  background-color: #f2cdff;
+  background-color: #fcd9ff;
 }
 
 .cell.ex::before,
@@ -178,11 +175,11 @@ li a:hover,
 /* CREATING O SHAPE*************/
 
 .cell.oh {
-  background-color: #91ff9a;
+  background-color: #a5d1e6;
 }
 
 .board.oh .cell:not(.ex):not(.oh):hover {
-  background-color: #b2fdb8;
+  background-color: #caeeff;
 }
 
 .cell.oh::before,
@@ -201,7 +198,7 @@ li a:hover,
 }
 
 .cell.oh::before {
-  background: #446d48;
+  background: #075174;
 }
 
 .cell.oh::after,
@@ -211,15 +208,15 @@ li a:hover,
 }
 
 .cell.oh::after {
-  background-color: #91ff9a;
+  background-color: #a5d1e6;
 }
 
 .board.oh .cell:not(.ex):not(.oh):hover::after {
-  background-color: #b2fdb8;
+  background-color: #caeeff;
 }
 
 .board.oh .cell:not(.ex):not(.oh):hover::before {
-  background-color: #88be8d;
+  background-color: #96b9d0;
 }
 
 /***********************************/
@@ -237,7 +234,7 @@ li a:hover,
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: rgb(231, 157, 200);
+  color: rgb(170, 255, 163);
   font-size: 5rem;
 }
 
